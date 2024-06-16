@@ -66,6 +66,7 @@ class particle_data:
 def unit_aware_mean(value_a: float, unit_a: str, value_b: float, unit_b: str) -> Tuple[float, str]:
     if unit_a == unit_b:
         return 0.5 * (value_a + value_b), unit_a
+
     factors = {
         'meV': 1e-3, # ? does this come up?
         'eV': 1.0,
@@ -96,7 +97,6 @@ def test_parse(file: str):
     print("finished test parsing " + file)
 
 
-
 def to_dict(file: str) -> dict:
     with open(file) as handle:
         lines = handle.readlines()
@@ -114,7 +114,7 @@ def to_dict(file: str) -> dict:
 def main():
     argc = len(argv)
     if argc < 2:
-        print("please provide directory of files to merge")
+        print("please provide a pattern to find the files to merge")
         return
 
     output_file = "out.txt"
@@ -125,16 +125,18 @@ def main():
     if argc > 3:
         ignore_stable = bool(argv[3])
 
-    directory = argv[1]
-    files = glob.glob(directory + "/*")
+    pattern = argv[1]
+    files = glob.glob(pattern + "/*")
     master_dict = {}
     for file in files:
         #test_parse(file)
         master_dict = {**master_dict, **to_dict(file)}
 
+    print(output_file)
     with open(output_file, 'w') as out_handle:
         out_handle.writelines([str(master_dict[pd]) for pd in master_dict])
     #print(master_dict)
+
 
 if __name__ == "__main__":
     main()
