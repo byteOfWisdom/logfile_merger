@@ -89,15 +89,15 @@ def unit_aware_max(values):
 
 
 def merge_eranges(a: str, b: str) -> str:
-    a.replace("(", "")
-    a.replace(")", "")
+    a = a.replace("(", "")
+    a = a.replace(")", "")
     a_lower = float(a.split()[0])
     a_lower_unit = a.split()[1]
     a_upper = float(a.split()[-2])
     a_upper_unit = a.split()[-1]
 
-    b.replace("(", "")
-    b.replace(")", "")
+    b = b.replace("(", "")
+    b = b.replace(")", "")
     b_lower = float(b.split()[0])
     b_lower_unit = b.split()[1]
     b_upper = float(b.split()[-2])
@@ -177,8 +177,12 @@ def main():
     master_dict = {}
 
     for file in files:
-        #test_parse(file)
-        master_dict = {**master_dict, **to_dict(file)}
+        file_content = to_dict(file)
+        for particle in file_content:
+            if particle in master_dict:
+                master_dict[particle] += file_content[particle]
+            else:
+                master_dict[particle] = file_content[particle]
 
     with open(output_file, 'w') as out_handle:
         out_handle.writelines([str(master_dict[pd]) for pd in master_dict])
