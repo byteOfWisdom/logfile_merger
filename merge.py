@@ -65,6 +65,7 @@ class particle_data:
 
     def __add__(self, other):
         res = self
+        res.count = self.count + other.count
         res.emean, res.emean_unit = unit_aware_mean(self.emean, self.emean_unit, other.emean, other.emean_unit)
         res.mystery_bracket = merge_eranges(self.mystery_bracket, other.mystery_bracket)
         res.stable = self.stable
