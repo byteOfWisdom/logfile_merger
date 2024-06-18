@@ -4,6 +4,14 @@ from sys import argv
 import glob
 from typing import Tuple
 
+factors = {
+    'meV': 1e-3, # ? does this come up?
+    'eV': 1.0,
+    'keV': 1e3,
+    'MeV': 1e6,
+    'GeV': 1e9,
+    'TeV': 1e12, # don't think our lil cyclotron is gonna produce these
+}
 
 class particle_data:
     def __init__(self, line: str = ''):
@@ -29,6 +37,7 @@ class particle_data:
         ))[-1]
 
         self.mystery_bracket = chunks[3]
+
         self.stable = chunks[4]
         self.decay_time = chunks[5]
 
@@ -57,24 +66,55 @@ class particle_data:
     def __add__(self, other):
         res = self
         res.emean, res.emean_unit = unit_aware_mean(self.emean, self.emean_unit, other.emean, other.emean_unit)
-        res.mystery_bracket = self.mystery_bracket # todo: actually merge these
+        res.mystery_bracket = merge_eranges(self.mystery_bracket, other.mystery_bracket)
         res.stable = self.stable
         res.decay_time = self.decay_time
         return res
 
 
+def unit_aware_min(values):
+    smallest = (0.0, "eV")
+    for num, unit in values:
+        if num * factors[unit] < smallest[0] * factors[smallest[1]]:
+            smallest = (num, unit)
+    return smallest
+
+def unit_aware_max(values):
+    biggest = (0.0, "eV")
+    for num, unit in values:
+        if num * factors[unit] > biggest[0] * factors[biggest[1]]:
+            biggest = (num, unit)
+    return biggest
+
+
+def merge_eranges(a: str, b: str) -> str:
+    a.replace("(", "")
+    a.replace(")", "")
+    a_lower = float(a.split()[0])
+    a_lower_unit = a.split()[1]
+    a_upper = float(a.split()[-2])
+    a_upper_unit = a.split()[-1]
+
+    b.replace("(", "")
+    b.replace(")", "")
+    b_lower = float(b.split()[0])
+    b_lower_unit = b.split()[1]
+    b_upper = float(b.split()[-2])
+    b_upper_unit = b.split()[-1]
+
+    values = [(a_lower, a_lower_unit), (a_upper, a_upper_unit), (b_lower, b_lower_unit), (b_upper, b_upper_unit)]
+
+    smallest, s_uint = unit_aware_min(values)
+    biggest, b_unit = unit_aware_max(values)
+
+    lower = str(smallest) + s_uint
+    upper = str(biggest) + b_unit
+    return "(" + lower + "-->" + upper + ")"
+
+
 def unit_aware_mean(value_a: float, unit_a: str, value_b: float, unit_b: str) -> Tuple[float, str]:
     if unit_a == unit_b:
         return 0.5 * (value_a + value_b), unit_a
-
-    factors = {
-        'meV': 1e-3, # ? does this come up?
-        'eV': 1.0,
-        'keV': 1e3,
-        'MeV': 1e6,
-        'GeV': 1e9,
-        'TeV': 1e12, # don't think our lil cyclotron is gonna produce these
-    }
 
     value = 0.5 * (value_a * factors[unit_a] + value_b + factors[unit_b])
     for unit in factors.__reversed__():
@@ -118,21 +158,27 @@ def main():
         return
 
     output_file = "out.txt"
-    if argc > 2:
-        output_file = argv[2]
+    if "-o" in argv:
+        output_file = argv[argv.index("-o") + 1]
 
     ignore_stable = False
-    if argc > 3:
-        ignore_stable = bool(argv[3])
+    if "--ignore-stable" in argv:
+        ignore_stable = True
 
-    pattern = argv[1]
-    files = glob.glob(pattern + "/*")
+    files = argv
+    if output_file in files:
+        files.remove(output_file)
+    if "-o" in files:
+        files.remove("-o")
+    if "--ignore-stable" in files:
+        files.remove("--ignore_stable")
+
     master_dict = {}
+
     for file in files:
         #test_parse(file)
         master_dict = {**master_dict, **to_dict(file)}
 
-    print(output_file)
     with open(output_file, 'w') as out_handle:
         out_handle.writelines([str(master_dict[pd]) for pd in master_dict])
     #print(master_dict)
