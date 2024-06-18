@@ -66,7 +66,10 @@ class particle_data:
     def __add__(self, other):
         res = self
         res.count = self.count + other.count
-        res.emean, res.emean_unit = unit_aware_mean(self.emean, self.emean_unit, other.emean, other.emean_unit)
+        res.emean, res.emean_unit = unit_aware_mean(
+            self.emean, self.emean_unit, self.count,
+            other.emean, other.emean_unit, other.count
+        )
         res.mystery_bracket = merge_eranges(self.mystery_bracket, other.mystery_bracket)
         res.stable = self.stable
         res.decay_time = self.decay_time
@@ -113,11 +116,14 @@ def merge_eranges(a: str, b: str) -> str:
     return "(" + lower + "-->" + upper + ")"
 
 
-def unit_aware_mean(value_a: float, unit_a: str, value_b: float, unit_b: str) -> Tuple[float, str]:
+def unit_aware_mean(
+    value_a: float, unit_a: str, count_a: int,
+    value_b: float, unit_b: str, count_b: int
+) -> Tuple[float, str]:
     if unit_a == unit_b:
-        return 0.5 * (value_a + value_b), unit_a
+        return (1.0 / factors[unit_a]) * (count_a * value_a * factors[unit_a] + count_b * value_b * factors[unit_b]) / (count_a + count_b), unit_a
 
-    value = 0.5 * (value_a * factors[unit_a] + value_b + factors[unit_b])
+    value = (count_a * value_a * factors[unit_a] + count_b * value_b * factors[unit_b]) / (count_a + count_b)
     for unit in factors.__reversed__():
         if value * (1.0 / factors[unit]) > 1.0:
             return value * (1.0 / factors[unit]), unit

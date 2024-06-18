@@ -1,19 +1,19 @@
-           Al26	7	Emean = 615.33 keV	(0.0eV-->973.9keV)	half life = 	717339 y  
-           Al27	22909	Emean = 340.31399999999996 keV	(0.0eV-->1.92683MeV)	stable	stable
+           Al26	7	Emean = 522.1161111111111 keV	(0.0eV-->973.9keV)	half life = 	717339 y  
+           Al27	22909	Emean = 338.72440031374373 keV	(0.0eV-->1.92683MeV)	stable	stable
   Al27[843.760]	1	Emean = 88.0099 eV	( 88.0099 eV  --> 88.0099 eV )	half life = 	0 ps 
-           Mg24	4789	Emean = 921.803 keV	(0.0eV-->4.16587MeV)	stable	stable
-           Mg26	67	Emean = 525.4145000000001 keV	(0.0eV-->1.11566MeV)	stable	stable
-  Mg26[1808.730]	7	Emean = 34.42845 eV	(0.0eV-->99.4902eV)	half life = 	0 ps 
+           Mg24	4789	Emean = 927.2982745234451 keV	(0.0eV-->4.16587MeV)	stable	stable
+           Mg26	67	Emean = 528.0138686868687 keV	(0.0eV-->1.11566MeV)	stable	stable
+  Mg26[1808.730]	7	Emean = 33.32758888888889 eV	(0.0eV-->99.4902eV)	half life = 	0 ps 
            Mg27	1	Emean = 519.084 keV	( 519.084 keV --> 519.084 keV)	half life = 	9.456 min
-           Si27	677	Emean = 462.5475 keV	(0.0eV-->1.32324MeV)	half life = 	4.14912 s  
-          alpha	4704	Emean = 5.515639999999999 MeV	(0.0eV-->14.2819MeV)	stable	stable
+           Si27	677	Emean = 463.2962387033399 keV	(0.0eV-->1.32324MeV)	half life = 	4.14912 s  
+          alpha	4704	Emean = 5.521272558659217 MeV	(0.0eV-->14.2819MeV)	stable	stable
       anti_nu_e	1	Emean = 732.697 keV	( 732.697 keV --> 732.697 keV)	stable	stable
-       deuteron	9	Emean = 1.76746 MeV	(0.0eV-->2.49688MeV)	stable	stable
-             e+	921	Emean = 1.7923900000000001 MeV	(0.0eV-->8.11418MeV)	stable	stable
-             e-	63071	Emean = 155.92849999999999 keV	(0.0eV-->10.0935MeV)	stable	stable
-          gamma	15604	Emean = 2.2455800000000004 MeV	(0.0eV-->20.3404MeV)	stable	stable
-        neutron	843	Emean = 2.39581 MeV	(0.0eV-->7.96958MeV)	half life = 	10.1663 min
-           nu_e	683	Emean = 2.0450999999999997 MeV	(0.0eV-->3.70687MeV)	stable	stable
-         proton	3863	Emean = 5.466799999999999 MeV	(0.0eV-->12.9802MeV)	stable	stable
+       deuteron	9	Emean = 1.7578369230769229 MeV	(0.0eV-->2.49688MeV)	stable	stable
+             e+	921	Emean = 1.7812397381818181 MeV	(0.0eV-->8.11418MeV)	stable	stable
+             e-	63071	Emean = 155.88403494675288 keV	(0.0eV-->10.0935MeV)	stable	stable
+          gamma	15604	Emean = 2.241172772506762 MeV	(0.0eV-->20.3404MeV)	stable	stable
+        neutron	843	Emean = 2.404291105882353 MeV	(0.0eV-->7.96958MeV)	half life = 	10.1663 min
+           nu_e	683	Emean = 2.0463542146341465 MeV	(0.0eV-->3.70687MeV)	stable	stable
+         proton	3863	Emean = 5.48366207325501 MeV	(0.0eV-->12.9802MeV)	stable	stable
   Al27[2212.010]	1	Emean = 46.7044 eV	( 46.7044 eV  --> 46.7044 eV )	half life = 	0 ps 
            Ne20	4	Emean = 976.983 keV	( 49.2617 keV --> 2.04687 MeV)	stable	stable
