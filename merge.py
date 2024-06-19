@@ -2,6 +2,7 @@
 
 from sys import argv
 import glob
+import platform
 from typing import Tuple
 
 factors = {
@@ -179,6 +180,10 @@ def main():
         files.remove("-o")
     if "--ignore-stable" in files:
         files.remove("--ignore_stable")
+
+    # catch the case of windows
+    if platform.system() == "windows":
+        files = glob.glob(files[0])
 
     master_dict = {}
 
