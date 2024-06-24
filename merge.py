@@ -154,8 +154,11 @@ def to_dict(file: str) -> dict:
 
         res = {}
         for line in lines[2:]:
-            pd = particle_data(line)
-            res[pd.name] = pd
+            try:
+                pd = particle_data(line)
+                res[pd.name] = pd
+            except:
+                pass
         return res
 
 
