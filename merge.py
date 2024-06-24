@@ -176,7 +176,7 @@ def main():
     if "--ignore-stable" in argv:
         ignore_stable = True
 
-    files = argv
+    files = argv[1:]
     if output_file in files:
         files.remove(output_file)
     if "-o" in files:
@@ -185,7 +185,7 @@ def main():
         files.remove("--ignore_stable")
 
     # catch the case of windows
-    if platform.system() == "windows":
+    if platform.system() == "Windows":
         files = glob.glob(files[0])
 
     master_dict = {}
