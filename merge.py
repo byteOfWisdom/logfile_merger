@@ -158,7 +158,7 @@ def to_dict(file: str) -> dict:
                 pd = particle_data(line)
                 res[pd.name] = pd
             except:
-                pass
+                print("discarded a line in file: " + file)
         return res
 
 
