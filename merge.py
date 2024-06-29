@@ -194,7 +194,10 @@ def main():
         file_content = to_dict(file)
         for particle in file_content:
             if particle in master_dict:
-                master_dict[particle] += file_content[particle]
+                try:
+                    master_dict[particle] += file_content[particle]
+                except:
+                    print("skipped merge")
             else:
                 master_dict[particle] = file_content[particle]
 
