@@ -1,0 +1,26 @@
+[Ba137]
+count = 10000
+stable = true
+half_life = nan
+
+[Ba137_661_659]
+count = 9503
+stable = false
+half_life = 153.088
+human_readable_half_life = "2.55146 min"
+
+[anti_nu_e]
+count = 10000
+stable = true
+half_life = nan
+
+[e-]
+count = 23836
+stable = true
+half_life = nan
+
+[gamma]
+count = 9363
+stable = true
+half_life = nan
+
