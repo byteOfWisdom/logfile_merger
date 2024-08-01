@@ -1,26 +1,97 @@
-[Ba137]
-count = 40000
+[Al27[843.760]]
+count = 1
+stable = False
+half_life = 0.0
+human_readable_half_life = 0 ps 
+
+
+[Mg24]
+count = 4789
 stable = True
 half_life = nan
 
-[Ba137_661_659]
-count = 37967
+[Mg26]
+count = 67
+stable = True
+half_life = nan
+
+[Mg26[1808.730]]
+count = 7
 stable = False
-half_life = 153.088
-human_readable_half_life = 2.55146 min
+half_life = 0.0
+human_readable_half_life = 0 ps 
+
+
+[Mg27]
+count = 1
+stable = False
+half_life = 567.36
+human_readable_half_life = 9.456 min
+
+
+[Si27]
+count = 677
+stable = False
+half_life = 4.14912
+human_readable_half_life = 4.14912 s  
+
+
+[alpha]
+count = 4704
+stable = True
+half_life = nan
 
 [anti_nu_e]
-count = 40000
+count = 1
+stable = True
+half_life = nan
+
+[deuteron]
+count = 9
+stable = True
+half_life = nan
+
+[e+]
+count = 921
 stable = True
 half_life = nan
 
 [e-]
-count = 95393
+count = 63071
 stable = True
 half_life = nan
 
 [gamma]
-count = 37402
+count = 15604
+stable = True
+half_life = nan
+
+[neutron]
+count = 843
+stable = False
+half_life = 609.978
+human_readable_half_life = 10.1663 min
+
+
+[nu_e]
+count = 683
+stable = True
+half_life = nan
+
+[proton]
+count = 3863
+stable = True
+half_life = nan
+
+[Al27[2212.010]]
+count = 1
+stable = False
+half_life = 0.0
+human_readable_half_life = 0 ps
+
+
+[Ne20]
+count = 4
 stable = True
 half_life = nan
 
