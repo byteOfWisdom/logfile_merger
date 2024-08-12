@@ -1,0 +1,251 @@
+[Al25]
+count = 1
+stable = false
+half_life = 7.18148
+human_readable_half_life = "7.18148 s  "
+
+[Al26]
+count = 197
+stable = false
+half_life = 2.2622e+13
+human_readable_half_life = "717339 y  "
+
+[Al26_228_305]
+count = 1
+stable = false
+half_life = 6.34386
+human_readable_half_life = "6.34386 s  "
+
+[Al27]
+count = 3557
+stable = true
+half_life = nan
+
+[Al27_843_760]
+count = 3
+stable = false
+half_life = 0
+human_readable_half_life = "0 ps "
+
+[Co59]
+count = 2
+stable = true
+half_life = nan
+
+[Cu62]
+count = 9
+stable = false
+half_life = 580.077
+human_readable_half_life = "9.66796 min"
+
+[Cu62_548_310]
+count = 1
+stable = false
+half_life = 0
+human_readable_half_life = "0 ps "
+
+[Cu63]
+count = 29
+stable = true
+half_life = nan
+
+[Cu64]
+count = 1
+stable = false
+half_life = 45713.9
+human_readable_half_life = "12.6983 h  "
+
+[Cu65]
+count = 19
+stable = true
+half_life = nan
+
+[Mg23]
+count = 2
+stable = false
+half_life = 11.3146
+human_readable_half_life = "11.3146 s  "
+
+[Mg24]
+count = 318
+stable = true
+half_life = nan
+
+[Mg24_1368_672]
+count = 1
+stable = false
+half_life = 0
+human_readable_half_life = "0 ps "
+
+[Mg24_4122_889]
+count = 1
+stable = false
+half_life = 0
+human_readable_half_life = "0 ps "
+
+[Mg25]
+count = 8
+stable = true
+half_life = nan
+
+[Mg26]
+count = 329
+stable = true
+half_life = nan
+
+[Mg26_1808_730]
+count = 196
+stable = false
+half_life = 0
+human_readable_half_life = "0 ps "
+
+[Mg26_2938_340]
+count = 7
+stable = false
+half_life = 0
+human_readable_half_life = "0 ps "
+
+[Mg27]
+count = 3
+stable = false
+half_life = 567.36
+human_readable_half_life = "9.456 min"
+
+[Na23]
+count = 54
+stable = true
+half_life = nan
+
+[Na23_439_990]
+count = 1
+stable = false
+half_life = 0
+human_readable_half_life = "0 ps "
+
+[Na24]
+count = 1
+stable = false
+half_life = 53977.8
+human_readable_half_life = "14.9938 h  "
+
+[Ne20]
+count = 29
+stable = true
+half_life = nan
+
+[Ni60]
+count = 1
+stable = true
+half_life = nan
+
+[Ni61]
+count = 2
+stable = true
+half_life = nan
+
+[Ni62]
+count = 10
+stable = true
+half_life = nan
+
+[Sc47]
+count = 1
+stable = false
+half_life = 289310
+human_readable_half_life = "3.34849 d  "
+
+[Si26]
+count = 1
+stable = false
+half_life = 2.24483
+human_readable_half_life = "2.24483 s  "
+
+[Si27]
+count = 95
+stable = false
+half_life = 4.14912
+human_readable_half_life = "4.14912 s  "
+
+[Ti46]
+count = 1
+stable = true
+half_life = nan
+
+[Ti47]
+count = 3
+stable = true
+half_life = nan
+
+[Ti48]
+count = 3
+stable = true
+half_life = nan
+
+[Ti50]
+count = 1
+stable = true
+half_life = nan
+
+[Zn62]
+count = 1
+stable = false
+half_life = 33087.8
+human_readable_half_life = "9.19106 h  "
+
+[Zn64]
+count = 2
+stable = true
+half_life = nan
+
+[alpha]
+count = 506
+stable = true
+half_life = nan
+
+[anti_nu_e]
+count = 6
+stable = true
+half_life = nan
+
+[deuteron]
+count = 52
+stable = true
+half_life = nan
+
+[e+]
+count = 315
+stable = true
+half_life = nan
+
+[e-]
+count = 13902
+stable = true
+half_life = nan
+
+[gamma]
+count = 3195
+stable = true
+half_life = nan
+
+[neutron]
+count = 331
+stable = false
+half_life = 609.979
+human_readable_half_life = "10.1663 min"
+
+[nu_e]
+count = 307
+stable = true
+half_life = nan
+
+[proton]
+count = 1059
+stable = true
+half_life = nan
+
+[triton]
+count = 1
+stable = false
+half_life = 2.69247e+08
+human_readable_half_life = "8.53777 y  "
+

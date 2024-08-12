@@ -23,7 +23,7 @@ class particle_data:
         res += "stable = " + str(self.stable) + "\n"
         res += "half_life = " + str(self.half_life) + "\n"
         if not self.stable:
-            res += "human_readable_half_life = " + self.hrhl + "\n"
+            res += "human_readable_half_life = \"" + self.hrhl + "\"\n"
         res += "\n"
         return res
 
@@ -45,6 +45,7 @@ class particle_data:
 def to_dict(file: str) -> dict:
     res = {}
     with open(file, 'rb') as handle:
+        print(file)
         dict = tomllib.load(handle)
 
         for name in dict:
